@@ -1,0 +1,91 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.login:hover, .signup:hover{
+    cursor: pointer;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #29292a;
+}
+
+header{
+    background-color: #1b1d21;
+    color: #34c65c;
+    padding: 20px;
+}
+
+header h1{
+    display: inline-block;
+    margIn: 0;
+}
+
+header .login_error{
+    font-style: italic;
+    margin: 14px 20px;
+    font-size: 14px;
+    color: #f25c54;
+    float: right;
+}
+
+header .login_form{
+    vertical-align: middle;
+    margin-top: 8px;
+    font-size: 14px;
+    float: right;
+}
+
+header .login_form label{
+    margin-left: 15px;
+}
+
+header .login_form input{
+    border-radius: 3px;
+    padding: 5px;
+    border: none;
+}
+
+header a:hover{
+    transition: background-color 0.2s;
+    background-color: #f25c54;
+    color: #29292a;
+}
+
+header a{
+    background-color: transparent;
+    border: 1px solid #f25c54;
+    text-decoration: none;
+    border-radius: 3px;
+    padding: 5px 15px;
+    margin-top: 5px;
+    color: #f25c54;
+    float: right;
+}
+
+section{
+    padding: 20px;
+}
+
+section h1{
+    color: #34c65c;
+}
+
+section .details{
+    border: 1px solid #34c65c;
+    border-radius: 4px;
+    color: white;
+    padding: 20px;
+    width: 40%;
+}
+
+section .details p{
+    padding: 5px;
+}
+
+section .details .emphasis{
+    font-style: italic;
+    color: #34c65c;
+}

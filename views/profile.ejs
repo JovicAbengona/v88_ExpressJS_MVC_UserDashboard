@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="https://learn.village88.com/assets/black_ninja-9adea777014ced1d5d36046555cf036c.ico?v=2" type="image/x-icon">
+        <link rel="stylesheet" href="/css/normalize.css">
+        <link rel="stylesheet" href="/css/profile.css">
+        <title>Village88 | NodeJS (Express) | Registration</title>
+    </head>
+    <body>
+        <header>
+            <h1>CodingDojo Wall</h1>
+            <a href="/logout">Log Out</a>
+        </header>
+        <section>
+            <h1>Welcome, <%= data.first_name %>!</h1>
+            <div class="details">
+                <p>
+                    <span class="emphasis">First Name: </span><%= data.first_name %>
+                </p>
+                <p>
+                    <span class="emphasis">Last Name: </span><%= data.last_name %>
+                </p>
+                <p>
+                    <span class="emphasis">Email Address: </span><%= data.email %>
+                </p>
+            </div>
+        </section>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script>
+        </script>
+    </body>
+</html>
