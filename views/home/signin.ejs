@@ -53,8 +53,12 @@
         <script>
             $("form").submit(function(){
                 $.post($(this).attr("action"), $(this).serialize(), function(res){
-                    if(res == "Success"){
-                        window.location.replace("students/profile");
+                    $("p").remove();
+                    if(res == 9){
+                        window.location.replace("dashboard/admin");
+                    }
+                    else if(res == 0){
+                        window.location.replace("dashboard/");
                     }
                     else{
                         $("form button").before(`<p class="font-italic text-danger small">${res}</p>`);
