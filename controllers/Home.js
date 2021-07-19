@@ -21,20 +21,6 @@ module.exports = {
         else
             response.redirect("dashboard/admin");
     },
-    profile: (request, response) => {
-        if(request.session.user_id != null){
-            const user_data = {
-                "id": request.session.user_id,
-                "email": request.session.email,
-                "first_name": request.session.first_name,
-                "last_name": request.session.last_name,
-            }
-            response.render("profile", { data: user_data });
-        }
-        else{
-            response.redirect("/");
-        }
-    },
     logout: (request, response) => {
         request.session.destroy();
         response.redirect("/");
