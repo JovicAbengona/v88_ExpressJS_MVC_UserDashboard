@@ -218,5 +218,47 @@ module.exports = {
             alert = [{"type": "error", "message": "An Error Occured"}];
         }
         response.render("templates/action_status", { alert });
+    },
+    process_message: async(request, response) => {
+        const errors = validationResult(request);
+        let messages = [{ "type": "error", "msg": [] }];
+
+        if(!errors.isEmpty()){
+            errors.array().forEach(value => {
+                messages[0]["msg"].push({
+                    "element": value.param,
+                    "message": value.msg
+                });
+            });
+
+            const alert = messages;
+            response.render("templates/action_status", { alert });
+        }
+        else{
+            await User.postMessage(request.params.profile_id, request.params.sender_id, request.body.message);
+            const alert = [{"type": "success", "message": "Your message has been posted"}];
+            response.render("templates/action_status", { alert });
+        }
+    },
+    process_comment: async(request, response) => {
+        const errors = validationResult(request);
+        let messages = [{ "type": "error", "msg": [] }];
+
+        if(!errors.isEmpty()){
+            errors.array().forEach(value => {
+                messages[0]["msg"].push({
+                    "element": `${value.param}_${request.params.message_id}`,
+                    "message": value.msg
+                });
+            });
+
+            const alert = messages;
+            response.render("templates/action_status", { alert });
+        }
+        else{
+            await User.postComment(request.params.message_id, request.params.sender_id, request.body.comment);
+            const alert = [{"type": "success", "message": "Your comment has been posted"}];
+            response.render("templates/action_status", { alert });
+        }
     }
 }

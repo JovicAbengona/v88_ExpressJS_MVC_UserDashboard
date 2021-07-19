@@ -50,6 +50,12 @@ Router.post("/process_edit_description/:id",
     body("description").notEmpty().withMessage("Description can't be empty")
 , Users.process_edit_description);
 Router.post("/process_delete_user/:id", Users.process_delete_user);
+Router.post("/process_message/:profile_id/:sender_id", 
+    body("message").notEmpty().withMessage("Message can't be empty")
+, Users.process_message);
+Router.post("/process_comment/:message_id/:sender_id", 
+    body("comment").notEmpty().withMessage("Comment can't be empty")
+, Users.process_comment);
 
 
 module.exports = Router;

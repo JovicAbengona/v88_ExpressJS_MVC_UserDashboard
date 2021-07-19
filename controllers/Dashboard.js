@@ -44,7 +44,10 @@ module.exports = {
         else if(action == "show"){
             const id = request.params.id;
             const [user] = await User.getUser(id);
-            response.render("dashboard/show_user", { user: user[0], moment });
+            const [messages] = await User.getMessages(id);
+            const [comments] = await User.getComments(id);
+            const calculateTime = User.calculateTime;
+            response.render("dashboard/show_user", { user: user[0], messages, comments, calculateTime, moment });
         }
         else{
             const [user] = await User.getUser(request.session.user_id);
